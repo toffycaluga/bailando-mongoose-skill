@@ -37,31 +37,6 @@ Cada canción contiene los siguientes campos:
 - `createdAt`: generado automáticamente.
 - `updatedAt`: generado automáticamente.
 
-## Variables de entorno
-
-Crea un archivo `.env` en la raíz del proyecto:
-
-```env
-PORT=3000
-MONGODB_URI=tu_cadena_de_conexion_de_mongodb
-````
-
-El archivo `.env` no debe subirse al repositorio.
-
-## Scripts disponibles
-
-Iniciar el servidor en modo desarrollo:
-
-```bash
-npm run dev
-```
-
-Iniciar el servidor normalmente:
-
-```bash
-npm start
-```
-
 ## Endpoints
 
 | Método | Ruta             | Descripción                 |
