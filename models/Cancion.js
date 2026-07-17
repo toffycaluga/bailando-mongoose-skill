@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const cancionSchema = new mongoose.Schema(
   {
@@ -21,8 +21,8 @@ const cancionSchema = new mongoose.Schema(
     anioLanzamiento: {
       type: Number,
       required: [true, "El año de lanzamiento es obligatorio"],
-      min: [1000, "El año de lanzamiento debe tener 4 dígitos"],
-      max: [9999, "El año de lanzamiento debe tener 4 dígitos"],
+      min: [1000, "El año de lanzamiento debe tener exactamente 4 dígitos"],
+      max: [9999, "El año de lanzamiento debe tener exactamente 4 dígitos"],
     },
 
     genero: {
@@ -38,4 +38,4 @@ const cancionSchema = new mongoose.Schema(
 
 const Cancion = mongoose.model("Cancion", cancionSchema);
 
-module.exports = Cancion;
+export default Cancion;
