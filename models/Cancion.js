@@ -5,7 +5,7 @@ const cancionSchema = new mongoose.Schema(
     titulo: {
       type: String,
       required: [true, "El título de la canción es obligatorio"],
-      minlength: [6, "El título debe tener al menos 6 caracteres"],
+      minlength: [2, "El título debe tener al menos 6 caracteres"],
       maxlength: [255, "El título no puede superar los 255 caracteres"],
       trim: true,
     },
@@ -13,7 +13,7 @@ const cancionSchema = new mongoose.Schema(
     artista: {
       type: String,
       required: [true, "El artista es obligatorio"],
-      minlength: [10, "El artista debe tener al menos 10 caracteres"],
+      minlength: [2, "El artista debe tener al menos 10 caracteres"],
       maxlength: [255, "El artista no puede superar los 255 caracteres"],
       trim: true,
     },
