@@ -2,14 +2,19 @@ import "dotenv/config";
 
 import express from "express";
 import cors from "cors";
+import morgan from "morgan";
+
 
 import connectDatabase from "./config/database.js";
 import cancionRoutes from "./routes/cancionRoutes.js";
+import playlistRoutes from "./routes/playlistRoutes.js"
+
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(morgan('dev'))
 app.use(express.json());
 
 app.get("/", (_req, res) => {
@@ -19,6 +24,7 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/canciones", cancionRoutes);
+app.use("/playlists",playlistRoutes);
 
 app.use((_req, res) => {
   return res.status(404).json({
